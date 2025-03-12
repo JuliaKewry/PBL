@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terapia Psicodinâmica</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 1rem 0;
+            animation: slideDown 1s ease-in-out;
+            text-align: center;
+            position: relative;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .header-images {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-image {
+            width: 70px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .button {
+            background-color: #e0e0e0;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #d0d0d0;
+            transform: scale(1.05);
+        }
+
+        .question {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .question.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 1.5rem 0;
+            position: relative;
+            text-align: center;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                margin: 1rem auto;
+                padding: 0.8rem;
+            }
+
+            .header-images {
+                position: static;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .header-image {
+                width: 50px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-images">
+            <img src="uni.jpg" alt="Logo 1" class="header-image">
+            <img src="psi.jpg" alt="Logo 2" class="header-image">
+        </div>
+        <h1>Terapia Psicodinâmica</h1>
+    </header>
+
+    <div class="container">
+        <h2>O que é terapia psicodinâmica?</h2>
+        <p>A Terapia Psicodinâmica, também conhecida como Psicoterapia Psicodinâmica ou psicanálise,
+            é uma abordagem psicológica baseada nas teorias de Sigmund Freud, que foca em entender os
+            processos inconscientes que influenciam o comportamento humano. Ela busca explorar e resolver
+            conflitos internos, muitas vezes originados na infância, que afetam a vida do indivíduo no presente.</p>
+
+        <h2>Benefícios da Terapia Psicodinâmica</h2>
+        <p>A Terapia Psicodinâmica oferece diversos benefícios, especialmente para aqueles que buscam um entendimento profundo de
+            si mesmos. Um dos principais benefícios é a resolução de conflitos internos, o que leva a uma sensação de alívio emocional
+            e uma maior compreensão das próprias ações.</p>
+
+        <h2>Você precisa de terapia?</h2>
+        <p>Responda algumas perguntas para saber se a terapia pode ser benéfica para você:</p>
+        <button class="button" onclick="toggleQuestions()">Responder Perguntas</button>
+        <div id="questions" class="question">
+            <p>1. Você tem dificuldades para lidar com suas emoções?</p>
+            <p>2. Você se sente frequentemente ansioso ou deprimido?</p>
+            <p>3. Você tem problemas de relacionamento ou conflitos interpessoais?</p>
+            <p>4. Você sente que repete padrões negativos em sua vida sem entender o motivo?</p>
+            <p>5. Você tem dificuldade em expressar suas emoções ou entender os sentimentos dos outros?</p>
+            <p>Se respondeu "sim" a alguma dessas perguntas, pode ser útil procurar um terapeuta.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Contatos de Psicólogos Terapeutas</h2>
+        <p>Se precisar de ajuda profissional, entre em contato com um dos psicólogos terapeutas abaixo:</p>
+        <ul>
+            <li>Dr. João Mendes - (11) 91234-5678</li>
+            <li>Dra. Carla Souza - (21) 92345-6789</li>
+            <li>Dr. Ricardo Lima - (31) 93456-7890</li>
+            <li>Dra. Fernanda Torres - (41) 94567-8901</li>
+            <li>Dr. Marcos Almeida - (51) 95678-9012</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Terapia Psicodinâmica. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleQuestions() {
+            var questions = document.getElementById("questions");
+            questions.classList.toggle("show");
+        }
+    </script>
+</body>
+</html>
